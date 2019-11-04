@@ -1,0 +1,31 @@
+<h1>Catálogo de productos</h1>
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let product of products; let i = index">
+        <img class="card-img-top img-fluid" [src]="product.imagen" [alt]="product.descripcion">
+        <div class="card-block">
+            <h4 class="card-title">
+                {{ product.descripcion }}
+            </h4>
+            <p class="card-text">
+                {{ product.categoria }}
+            </p>
+            <p class="card-text">
+                <small class="text-muted">
+                    {{ product.precio | currency:"$" }}
+                </small>
+            </p>
+            <button (click)="verproduct(i)" type="button" class="btn btn-outline-success btn-block">
+                    <i class="fas fa-cart-plus"></i>
+                Adicionar
+            </button>
+            <button (click)="verproduct(i)" type="button" class="btn btn-outline-primary btn-block">
+                    <i class="fas fa-eye"></i>
+                Ver más
+            </button>
+
+            <!-- <a [routerLink]="['/product', i]" class="btn btn-outline-primary btn-block">Ver más link...</a> -->
+
+        </div>
+    </div>
+
+</div>
