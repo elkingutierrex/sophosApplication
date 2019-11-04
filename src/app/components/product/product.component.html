@@ -1,1 +1,35 @@
-<p>product works!</p>
+<h1>{{product.descripcion}}
+    <small>{{product.aparicion}}</small>
+</h1>
+<div class="row">
+    <div class="col-md-4">
+        <img src="{{product.imagen}}" alt="{{product.descripcion}}" class="img-fluid">
+        <br><br>
+
+        <button (click)="seeProduct(i)" type="button" class="btn btn-outline-success btn-block">
+                <i class="fas fa-cart-plus"></i>
+                Adicionar
+        </button>
+        <a [routerLink]="['/products']">
+            <button (click)="seeProduct(product)" type="button" class="btn btn-outline-danger btn-block">
+                <i class="fas fa-chevron-circle-left"></i>
+                Regresar
+        </button>
+        </a>
+    </div>
+   
+
+    <div class="col-md-8">
+        <h3>{{product.descripcion}}</h3>
+        <hr class="block">
+        <p>
+           Cantidad disponible: <b>{{product.cantidadDisponible}}</b> 
+        </p>
+        <p>
+            Categoria: <b>{{product.categoria}}</b> 
+         </p>
+         <p>
+            Precio: <b>{{product.precio}}</b> 
+         </p>        
+    </div>
+</div>

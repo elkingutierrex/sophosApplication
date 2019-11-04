@@ -14,11 +14,11 @@
                     {{ product.precio | currency:"$" }}
                 </small>
             </p>
-            <button (click)="verproduct(i)" type="button" class="btn btn-outline-success btn-block">
+            <button (click)="addProduct(product)" type="button" class="btn btn-outline-success btn-block">
                     <i class="fas fa-cart-plus"></i>
                 Adicionar
             </button>
-            <button (click)="verproduct(i)" type="button" class="btn btn-outline-primary btn-block">
+            <button (click)="seeProduct(product)" type="button" class="btn btn-outline-primary btn-block">
                     <i class="fas fa-eye"></i>
                 Ver más
             </button>
