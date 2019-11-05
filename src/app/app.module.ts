@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 
 import { APP_ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +13,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 
 //Services
 import { ProductsService } from './services/products.service'
-import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -24,11 +26,14 @@ import { HttpClientModule } from '@angular/common/http';
     CustomersComponent,
     CartComponent,
     NavbarComponent
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule
+
   ],
   providers: [ 
     ProductsService

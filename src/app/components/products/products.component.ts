@@ -3,6 +3,9 @@ import { ProductsService } from '../../services/products.service'
 import { Router } from '@angular/router'
 
 
+
+
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -15,7 +18,7 @@ export class ProductsComponent implements OnInit {
   loading = true;
 
   constructor( private _productService: ProductsService,
-               private router: Router ) { 
+               private router: Router) { 
     this._productService.getProducts()
       .subscribe( ( data:any ) => this.products = data);
       this.loading = false;      
@@ -29,7 +32,7 @@ export class ProductsComponent implements OnInit {
   }
 
   addProduct( item:object ){
-    this._productService.addProduct( item );
+    this._productService.addProduct( item );   
   }
 
 

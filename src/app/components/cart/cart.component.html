@@ -1,1 +1,65 @@
-<p>cart works!</p>
+<div class="col-12 row">
+    <div class="col-md-6">
+        <label>Nombre</label>
+        <input  class="form-control"
+                type="text" 
+                name="nombre"
+                [(ngModel)]="nombre"
+                placeholder="Ingrese su nombre">
+    </div>
+    
+    <div class="col-md-6">
+        <label>Fecha Nacimiento</label>
+        <input  class="form-control"
+                type="text" 
+                name="fechaNacimiento"
+                [(ngModel)]="fechaNacimiento"
+                placeholder="Ingrese su fecha de nacimiento (dd/mm/aaaa)">
+        
+    </div>
+    <div class="col-md-6">            
+        <label>Direcion Envio</label>
+        <input  class="form-control"
+                type="text" 
+                name="direccionEnvio"
+                [(ngModel)]="direccionEnvio"
+                placeholder="Ingrese la direccion de envio">
+                
+    </div>
+    <div class="col-md-6">
+        <label>Ciudad</label>
+        <select class="form-control"[(ngModel)]="ciudad" name="ciudad">
+            <option disabled value="">Seleccione...</option>
+            <option *ngFor="let city of cities">{{city.nombre}}</option>
+        </select>
+    </div>
+        
+    <button (click)="generateOrder()" type="button" class="btn btn-outline-primary btn-block">
+            <i class="fas fa-check"></i>
+        Generar pedido
+    </button>
+    <div class="offset-sm-10">
+<button (click)="seeProduct(product)" type="button" class="btn btn-outline-primary btn-block">
+        <i class="fas fa-check"></i>
+    Generar pedido
+</button>
+</div>
+</div>
+<table class="table">
+        <thead class="thead-dark">
+          <tr>
+            
+            <th scope="col">Descripcion</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Valor</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of currentOrder">
+          <tr>
+            <th scope="row">{{ item.descripcion }}</th>
+            <td> {{ item.categoria }}</td>
+            <td>{{ item.precio | currency : "$"}}</td>
+            
+          </tr>         
+        </tbody>
+</table>

@@ -24,5 +24,6 @@ export class ProductComponent implements OnInit {
 
   addProduct( item:object ){
     this._productService.addProduct( item );
+   
   }
 }
